@@ -1,0 +1,21 @@
+-- Le nombre d’applications téléchargées plus de 100 000 fois
+SELECT COUNT(*) AS nb_app_download_10000
+FROM application
+WHERE downloads >=100000;
+
+-- La note moyenne de l’application « DUNK »
+SELECT AVG(review.rating) AS avg_rating_dunk
+FROM review JOIN application ON review.app_id = application.id
+WHERE application.name = 'DUNK';
+
+-- Les 10 applications les mieux notées en moyenne
+SELECT application.name as app_name, AVG(review.rating) AS avg_rating
+FROM review JOIN application ON review.app_id = application.id
+GROUP BY application.id
+LIMIT  10;
+
+-- La catégorie la mieux notée en moyenne
+SELECT application.category as app_category, AVG(review.rating) AS avg_rating
+FROM review JOIN application ON review.app_id = application.id
+GROUP BY application.category
+LIMIT  1;
