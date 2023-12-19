@@ -67,7 +67,7 @@ name | str | Nom de l’app
 category | str | Catégorie de l’app
 downloads | int | Nombre de téléchargements de l’app
 
-Table ***review***, contenant des informations sur les avis sur les applications de la tableprécédente.
+Table ***review***, contenant des informations sur les avis sur les applications de la table précédente.
 
 Nom de la colonne | Type | Description
 --- | --- | ---
